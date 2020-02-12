@@ -1,0 +1,1 @@
+toolranks_extra.farming (Enable toolranks on farming tools) bool true
