@@ -16,6 +16,7 @@ local use_farming = minetest.get_modpath("farming")
 local use_farming_redo = use_farming and (farming.mod == "redo") or false
 
 
-if use_farming and (not use_farming_redo) and toolranks_extras.settings.enable_farming_tools then
+if use_farming and (not use_farming_redo)
+	and toolranks_extras.settings.enable_farming_tools then
 	dofile(MP.."/hoe.lua")
 end
