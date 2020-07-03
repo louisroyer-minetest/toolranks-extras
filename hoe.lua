@@ -4,7 +4,7 @@ local function add_hoe(material)
 	local hoe_on_use = ItemStack(name):get_definition().on_use
 	minetest.override_item(name, {
 		original_description = desc,
-		description = toolranks.create_description(desc, 0, 1),
+		description = toolranks.create_description(desc),
 		after_use = toolranks.new_afteruse,
 		-- we also want hoes to increase dugnodes when farming soil
 		on_use = function(itemstack, user, pointed_thing, uses)
