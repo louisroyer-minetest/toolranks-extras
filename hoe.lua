@@ -1,21 +1,33 @@
 local function add_hoe(material)
+	-- registering as tool
 	local name = "farming:hoe_"..material
-	local desc = ItemStack(name):get_definition().description
-	local hoe_on_use = ItemStack(name):get_definition().on_use
+	toolranks.add_tool(name)
+
+	-- getting after_use
+	local def = minetest.registered_items[name]
+	local hoe_on_use = def.on_use
+	local hoe_after_use = def.after_use
+
+	if (hoe_on_use == nil) or (hoe_after_use == nil) then
+		return
+	end
 	minetest.override_item(name, {
-		original_description = desc,
-		description = toolranks.create_description(desc),
-		after_use = toolranks.new_afteruse,
 		-- we also want hoes to increase dugnodes when farming soil
 		on_use = function(itemstack, user, pointed_thing, uses)
+			local under = minetest.get_node(pointed_thing.under)
+			-- get origin wear
 			local wear = itemstack:get_wear()
+			-- apply previous on_use
 			local ret_itemstack = hoe_on_use(itemstack, user, pointed_thing, uses)
-			local hoe_uses = ret_itemstack and ret_itemstack:get_wear() - wear or 0
-			if (hoe_uses > 0) then -- increase dugnode if tool damaged
-				return toolranks.new_afteruse(ret_itemstack, user, nil, {wear = hoe_uses})
-			else
-				return ret_itemstack or nil
+			if ret_itemstack == nil then
+				return nil
 			end
+			-- compute wear diff
+			local hoe_uses = ret_itemstack:get_wear() - wear
+			-- set wear back because it is up to hoe_after_use to add wear
+			ret_itemstack:set_wear(wear)
+			-- apply afteruse
+			return hoe_after_use(ret_itemstack, user, under, {wear = hoe_uses})
 		end
 
 	})
