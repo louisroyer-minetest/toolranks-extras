@@ -28,3 +28,20 @@ read_globals = {
 	"toolranks",
 	"farming",
 }
+
+files["tool_types.lua"] = {
+	read_globals = {
+		toolranks = {
+			fields = {
+				get_tool_type = {
+					read_only = false,
+					other_fields = false
+				},
+				create_description = {
+					read_only = false,
+					otherfields = false
+				},
+			}
+		}
+	}
+}

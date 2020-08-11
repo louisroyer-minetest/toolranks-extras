@@ -1,1 +1,2 @@
-toolranks_extra.farming (Enable toolranks on farming tools) bool true
+toolranks_extras.farming (Enable toolranks on farming tools) bool true
+toolranks_extras.tool_types (Enable registering of extras tool types) bool true
