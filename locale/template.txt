@@ -1,0 +1,6 @@
+# textdomain: toolranks_extras
+
+
+### tool_types.lua ###
+
+@1@2@n@3Level @4 @5@n@6@7: @8=
