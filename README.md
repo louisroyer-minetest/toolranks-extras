@@ -12,11 +12,14 @@ This mod also adds an API to register new types of tools for toolranks.
 --[[
 --   `keyword` is a string to be detected in tool description
 --   `tool_type` is a localized tool type (if nil, then unregister the keyword)
+--   `node_dug_display` is an (optional) alternative localized display
+--       of "Node Dug" (if false, then unregister the display)
 --]]
-toolranks_extras.register_tool_type(keyword, tool_type)
+toolranks_extras.register_tool_type(keyword, tool_type, [node_dug_display])
 
 -- example
 toolranks_extras.register_tool_type("battle_axe", S("battle axe"))
+toolranks_extras.register_tool_type("bow", S("bow"), S("Arrows thrown"))
 ```
 
 ![Screenshot](screenshot.png)

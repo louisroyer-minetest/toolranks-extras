@@ -3,7 +3,7 @@ local MP = minetest.get_modpath("toolranks_extras")
 toolranks_extras = {}
 
 -- mod information
-toolranks_extras.mod = {version = "1.4.0", author = "Louis Royer"}
+toolranks_extras.mod = {version = "1.4.1", author = "Louis Royer"}
 
 -- settings
 toolranks_extras.settings = {
