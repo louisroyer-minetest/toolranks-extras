@@ -14,6 +14,10 @@ local function add_hoe(material)
 	minetest.override_item(name, {
 		-- we also want hoes to increase dugnodes when farming soil
 		on_use = function(itemstack, user, pointed_thing, uses)
+			-- if no node is pointed, the hoe cannot be used
+			if pointed_thing.under == nil then
+				return nil
+			end
 			local under = minetest.get_node(pointed_thing.under)
 			-- get origin wear
 			local wear = itemstack:get_wear()
