@@ -1,6 +1,6 @@
 # Toolranks Extras
 
-![Build Status](https://github.com/louisroyer-minetest/toolranks-extras/actions/workflows/main.yml/badge.svg) [![ContentDB](https://content.minetest.net/packages/louisroyer/toolranks_extras/shields/title/)](https://content.minetest.net/packages/louisroyer/toolranks_extras/) [![ContentDB](https://content.minetest.net/packages/louisroyer/toolranks_extras/shields/downloads/)](https://content.minetest.net/packages/louisroyer/toolranks_extras/)
+[![ContentDB](https://content.minetest.net/packages/louisroyer/toolranks_extras/shields/title/)](https://content.minetest.net/packages/louisroyer/toolranks_extras/) [![ContentDB](https://content.minetest.net/packages/louisroyer/toolranks_extras/shields/downloads/)](https://content.minetest.net/packages/louisroyer/toolranks_extras/)
 
 This minetest mod extends [toolranks](https://github.com/lisacvuk/minetest-toolranks). It adds support for `minetest-games`’s mods (except `default`).
 This mod currently adds support for hoes from `farming` mod.
